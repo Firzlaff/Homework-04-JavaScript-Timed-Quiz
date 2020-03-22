@@ -1,4 +1,5 @@
 // Variable for the answers/score 
+var Score;
 
 // when i click the start game button the timer starts and the questions are started, event listener that starts time and switchs to questions
 

@@ -69,15 +69,36 @@ var questions = [
   ];
 
 
-
-
-  
-// when the page loads I am looking at the Start Screen for the game which shows the title a click below to play now and the button for play now and high-scores
+  // Buttons to load the choices into for selection which i feel I will need to use a for loop somehow 
 
 // when i click the start playnow button the timer starts and the questions are started, event listener that starts time and switchs to questions
 //$("#play-Btn")click
 
+var startBtn = $("#play-Btn");
+
+// Event listner for event click to change to questions I need to name this function
+startBtn.addEventListener("click", questionsGenerator);
+
 // A question is asked with 4 multiple chioce answers once the user clicks an options it choses that answer
+// 
+function questionsGenerator(){
+    $("#questions").change
+}
+
+
+
+  // Buttons to load the choices into for selection which i feel I will need to use a for loop somehow 
+var btn1 = document.createElement("button");
+button.innerHTML = "choice1";
+
+var btn2 = document.createElement("button");
+button.innerHTML = "choice2";
+
+var btn3 = document.createElement("button");
+button.innerHTML = "chioce3";
+
+var btn4 = document.createElement("button");
+button.innerHTML = "choice4";
 //ask the quetsions
 // log the answer if correct 
 //keep track of the correct answers

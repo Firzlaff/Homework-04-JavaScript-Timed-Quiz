@@ -68,6 +68,10 @@ var questions = [
     }
   ];
 
+
+
+
+  
 // when the page loads I am looking at the Start Screen for the game which shows the title a click below to play now and the button for play now and high-scores
 
 // when i click the start playnow button the timer starts and the questions are started, event listener that starts time and switchs to questions

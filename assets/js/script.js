@@ -5,19 +5,22 @@ $(document).ready(function () {
 
 // HTML Nodes  
 
-let questionsDisplay = $("#questions");
 let playNowBtn = $("#playNow-Btn");
-let quizTitleDisplay = $("#quiz-title");
-let quesitonsDisplayBox = $("#questions-display-box");
+let quizTitleDisplay = $("#quiz-Name");
+let questionsDisplay = $("#questions-display-are");
 let highScoresDisplay = $("#hihgScores-Btn");
 let timerDisplay = $("#timer");
 let answerResults = $("#answer-Results-Display-Box");
+let choice1Display = $("#button1-Display-Box");
+let choice2Display = $("#button2-Display-Box");
+let choice3Display = $("#button3-Display-Box");
+let choice4Display = $("#button4-Display-Box");
 let startBtn = $("#");
 
 
 // Variable for the answers/score 
 let score = 0;
-let btn1
+let btn1;
 //Other variables var quesitons;
 let choices;
 
@@ -104,11 +107,15 @@ TimerDisplay
 //function questionsGenerator(){
  Funciton questionGenerator() = $("#questions").text = 
 } 
-// Buttons to load the choices into for selection which 
+
+//setting the buttons to show the choices
 //I feel I will need to use a forLoop that cycles all questions and choices returns the number of correctly selected answers
 //let generateQuestions = $(this.text) 
-
-let btn1 = $("<button>").$(this)text = choice1,;
+questionsDisplay.text(questions)
+    btn1.text(choice1);
+    btn1.text(choice2);
+    btn1.text(choice3);
+    btn1.text(choice4);
 
 
 //var btn2 = document.createElement("button");

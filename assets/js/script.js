@@ -1,7 +1,28 @@
+
+
+
+
+$(document).ready(function () {
+
+
+// HTML Nodes
+
+let questionsDisplay = $("#questions");
+let startBtn = $("#playNow-Btn");
+let quizTitleDisplay = $("#quiz-title");
+let quesitonsDisplayBox = $("#questions-display-box");
+let highScoresDisplay = $("#hihgScores-Btn");
+let startBtn = $("#");
+let startBtn = $("#");
+let startBtn = $("#");
+
+
 // Variable for the answers/score 
-var score;
+let score = 0;
 //var quesitons;
-var choices;
+let choices;
+
+// questions stored as an object with the question, choices and answer to the question. 
 
 var questions = [
     {
@@ -68,26 +89,22 @@ var questions = [
     }
   ];
 
-
-  // Buttons to load the choices into for selection which i feel I will need to use a for loop somehow 
-
+   
 // when i click the start playnow button the timer starts and the questions are started, event listener that starts time and switchs to questions
 //$("#play-Btn")click
 
-var startBtn = $("#play-Btn");
 
-// Event listner for event click to change to questions I need to name this function
-startBtn.addEventListener("click", questionsGenerator);
+
+// Event listner for event click to change to questions 
+startBtn.addEventListener("click", questionsGenerator(event));{
 
 // A question is asked with 4 multiple chioce answers once the user clicks an options it choses that answer
-// 
+//ask the quetsions
 function questionsGenerator(){
     $("#questions").change
-}
 
-
-
-  // Buttons to load the choices into for selection which i feel I will need to use a for loop somehow 
+// Buttons to load the choices into for selection which i feel I will need to use a for loop somehow 
+// Buttons to load the choices into for selection which i feel I will need to use a for loop somehow 
 var btn1 = document.createElement("button");
 button.innerHTML = "choice1";
 
@@ -99,7 +116,7 @@ button.innerHTML = "chioce3";
 
 var btn4 = document.createElement("button");
 button.innerHTML = "choice4";
-//ask the quetsions
+};
 // log the answer if correct 
 //keep track of the correct answers
 // the total number of correct answers becomes the total score. 
@@ -115,3 +132,6 @@ button.innerHTML = "choice4";
 // if you clicked high-scores you are taken to high-score section
 // from the high-scores you see the stored high scores with initials that were saved, 
 // from the high-scores sections there are two buttons play again or clear the high-scores
+
+
+}

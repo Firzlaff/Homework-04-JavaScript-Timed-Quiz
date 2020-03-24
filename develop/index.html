@@ -12,7 +12,7 @@
 
       <h1>Timed JavaScript Quiz</h1>
       
-      <text>Time: <text id="time">60</text></text>
+      <text>Time: <text id="timer">60</text></text>
 
     </div>
 
@@ -29,14 +29,15 @@
         </div>
     </header>
 
-    <div id="quiz-title" class="">
+    <div id="quiz-area" class="container">
+    <!--Box where the Questions will prompt, this will swap out for the end game screen and the highscore area-->
+    <div id="questions-display-box">
         <P>Please Click Below To Play</P>
     </div>
-    <!--Box where the Questions will prompt, this will swap out for the end game screen and the highscore area-->
-    <div id="questions-display-box" class="container">
-        <div id="questions">
-
-        </div>
+    <div id="Buttons-Display-Box">   
+    </div>
+    </div>
+    <div id="answer-Results-Display-Box">   
     </div>
 
     <!--Play Now Button -->
@@ -44,7 +45,7 @@
 
     <!--High Score Page Button-->
     <button id="hihgScores-Btn" class="button">High-Scores</button>  
-
+   </div>
 </body>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="../assets/js/script.js"></script>

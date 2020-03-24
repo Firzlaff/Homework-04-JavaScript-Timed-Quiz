@@ -15,7 +15,7 @@ $(document).ready(function () {
     let choice2Display = $("#button2-Display-Box");
     let choice3Display = $("#button3-Display-Box");
     let choice4Display = $("#button4-Display-Box");
-    let startBtn = $("#");
+    
 
 
     // Variable for the answers/score 

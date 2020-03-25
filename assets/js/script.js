@@ -1,21 +1,19 @@
-
-
 $(document).ready(function () {
 
 
     // HTML Nodes  
 
-    let playNowBtn = $("#playNow-Btn"); 
-    let quizTitleDisplay = $("#quiz-Name");
-    let questionsDisplay = $("#questions-display-area");
-    let highScoresDisplay = $("#hihgScores-Btn");
-    let timerDisplay = $("#timer");
-    let answerResults = $("#answer-Results-Display-Box");
-    let choice1Display = $("#button1-Display-Box");
-    let choice2Display = $("#button2-Display-Box");
-    let choice3Display = $("#button3-Display-Box");
-    let choice4Display = $("#button4-Display-Box");
-    
+    const playNowBtn = $("#playNow-Btn"); 
+    const quizTitleDisplay = $("#quiz-Name");
+    const questionsDisplay = $("#questions-display-area");
+    const highScoresDisplay = $("#hihgScores-Btn");
+    const timerDisplay = $("#timer");
+    const answerResults = $("#answer-Results-Display-Box");
+    const choice1Display = $("#button1-Display-Box");
+    const choice2Display = $("#button2-Display-Box");
+    const choice3Display = $("#button3-Display-Box");
+    const choice4Display = $("#button4-Display-Box");
+    cont questionIndex = 0;
 
 
     // Variable for the answers/score 
@@ -29,51 +27,33 @@ $(document).ready(function () {
     let questions = [
         {
             question: "How does a For Loop start",
-            choice1: "for (i<=5)",
-            choice2: "for i = 1 or to 5",
-            choice3: "for (i = 0; i <= 5; i++)",
-            choice4: "for i=var += i",
-            answer: 3
+            choice: ["for (i<=5)", "for i = 1 or to 5", "for (i = 0; i <= 5; i++)", "for i=var += i"],
+            answer: "for (i = 0; i <= 5; i++)",
         },
         {
             question: "Inside which HTML element do we put the JavaScript??",
-            choice1: "<script>",
-            choice2: "<javascript>",
-            choice3: "<js>",
-            choice4: "<scripting>",
-            answer: 1
+            choice: ["<script>", "<javascript>", "<js>", "<scripting>"],
+            answer: "<script>"
         },
         {
             question: "Where is the correct place to insert a JavaScript?",
-            choice1: "The <body> section",
-            choice2: "Both the <head> section and the <body> section",
-            choice3: "The <head> section",
-            choice4: "The <meta> section",
-            answer: 2
+            choice: ["The <body> section", "Both the <head> section and the <body> section", "The <head> section", "The <meta> section"],
+            answer: "Both the <head> section and the <body> section"
         },
         {
             question: "How do you post 'javaScript-Quiz' in an alert box?",
-            choice1: "msgBox('javaScript-Quiz');",
-            choice2: "alertBox('javaScript-Quiz');",
-            choice3: "msg('javaScript-Quiz');",
-            choice4: "alert('javaScript-Quiz');",
-            answer: 4
+            choice: ["msgBox('javaScript-Quiz');", "alertBox('javaScript-Quiz');", "msg('javaScript-Quiz');", "alert('javaScript-Quiz')"],
+            answer: "alert('javaScript-Quiz')"
         },
         {
             question: "What is the correct suntax for referring to an external Script called?",
-            choice1: "<script href=",
-            choice2: "<script name=",
-            choice3: "<script src=",
-            choice4: "<script img",
-            answer: 3
+            choice: ["<script href=", "<script name=", "<script src=", "<script img"],
+            answer: "<script src="
         },
         {
             question: "How do you write an If statement to javaScript?",
-            choice1: "if i = 5",
-            choice2: "if i == 5 then",
-            choice3: "if (i == 5)",
-            choice4: "if i = 5 then",
-            answer: 3
+            choice1: ["if i = 5", "if i == 5 then", "if (i == 5)", "if i = 5 then"],
+            answer: "if (i == 5)"
         },
         {
             question: "True or Falst the Extrenal javaScript file must contain the <Script> tag?",
@@ -94,33 +74,48 @@ $(document).ready(function () {
     // When I click the Play Now button the game starts, Event listner for event click to change to questions 
     playNowBtn.on("click", function (event) {
 
+        // set hide and non hide for two screens. 
+        
+    //  function to upload a question and choices. 
+          
+    //   });
+         displayQuestion();
     // when i click the playnow button the timer starts  
     //$("#play-Btn")click    //TimerDisplay 
-    
-        // A question is asked with 4 multiple chioce answers once the user clicks an options it choses that answer
-        //function questionsGenerator(){
-       // Funciton questionGenerator() {
-       //     questionsDisplay.text(questions[0]);
-       //     btn1.text(choice1[i]);
-      //      btn2.text(choice2[i]);
-      //      btn3.text(choice3[i]);
-       //     btn4.text(choice4[i]);
-       // }
-        
-      //  questions.forEach(function(){
-            questionsDisplay.text(question, choice1, choice2, choice3, choice4);
-     //   });
 
-        //setting the buttons to show the choices
-        //I feel I will need to use a forLoop that cycles all questions and choices returns the number of correctly selected answers
+
+     //setting the buttons to show the choices
+    //I feel I will need to use a forLoop that cycles all questions and choices returns the number of correctly selected answers
       
     });
+
+
+    function displayQuestion(){   
+           
+        questionsDisplay.innertext(questions[questionIndex].question);
+        choice1Display.innertext(questions[questionIndex].choice[0]);
+        choice2Display.innertext(questions[questionIndex].choice[1]);
+        choice3Display.innertext(questions[questionIndex].choice[2]);
+        choice4Display.innertext(questions[questionIndex].choice[3]);
+
+        }    
 })
 
 // log the answer if correct 
+
+document.querySelectorAll(".ans").forEach(fucntion(e){
+
+    e.addEventlistener("click", function(e){
+       // console.log(e.target.innerText)
+
+})
+
+
+
+})
 //keep track of the correct answers
 // the total number of correct answers becomes the total score. 
-
+if (questionIndex != questions.length)
 
 // when the timer ends or the questions have all been completed then the game ends and you move to end game screen.
 // ^Event listener for when timer hits 0/ max time hits 0 or all questions are answered

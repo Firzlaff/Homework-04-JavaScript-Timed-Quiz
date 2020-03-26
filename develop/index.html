@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,7 +34,7 @@
 
 </head>
 
-<body id="the-Quiz">
+<body>
 
     <div id="quiz-Main" class="container text-center"> 
         <!--Quiz title box that shows at the top above the questions or the high score area-->
@@ -42,27 +43,26 @@
             <h1 id="quiz-Name">Timed JavaScript Quiz</h1>
             <p>Try to answer the following JavaScript related questions within the time limit. Keep in mind that incorrect answers will penalize your Time by ten seconds!</p>
             <text>Time: <text id="time">60</text></text>
-            <button>Start</button>
-            <button id="hihgScores-Btn" class="button hide">High-Scores</button> 
+            <button id=>Play Now</button>
+           
 
         </div>
     
     <!--Button Answer Display Section-->   
-        <div id="answer-Results" class="hide">
-
-            <div id="button1-Display-Box" class="ans"></div>
-            <div id="button2-Display-Box" class="ans"></div>
-            <div id="button3-Display-Box" class="ans"></div>
-            <div id="button4-Display-Box" class="ans"></div>
+        <div id="question" class="hide">
+            <h3 id="ask"></h3>    
+            <h6 id="button1-Display" class="ans"></h6>
+            <h6 id="button2-Display" class="ans"></h6>
+            <h6 id="button3-Display" class="ans"></h6>
+            <h6 id="button4-Display" class="ans"></h6>
 
         </div>
 
     </div> 
 
-    <!--High Score Page Button-->
-    <button id="hihgScores-Btn" class="button hide">High-Scores</button>  
-   </div>
+    <!--Js script page link-->
+    <script src="../assets/js/script.js"></script>
 </body>
-<!--Js script page link-->
-<script src="../assets/js/script.js"></script>
+
+
 </html>

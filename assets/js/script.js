@@ -1,6 +1,6 @@
 console.log("app.js loaded");
 
-// questions stored as an object with questions, choices and answers
+
 const questions = [
     {
         question: "How does a For Loop start",
@@ -36,7 +36,7 @@ const questions = [
         question: "True or Falst the Extrenal javaScript file must contain the <Script> tag?",
         choice1: "True",
         choice2: "False",
-        answer: 2
+        answer: "False"
     },
     {
         question: "How does a while loop start",
@@ -44,85 +44,72 @@ const questions = [
         choice2: "while i= 1 to 10",
         choice3: "while (i <= 10; i++)",
         choice4: "while i=var ++",
-        answer: 3
+        answer: "while (i <= 10; i++)"
     }
 ];
 
-    // HTML Nodes  
-const mainDiv = $("#quiz-Main");
-const quizDisplay = $("#quiz-Name");
-const question = $("#question");
-const button = $("button");
-const timerDisplay = $("#timer");
-const askQ = $("#ask");
-const choice1Display = $("#button1-Display");
-const choice2Display = $("#button2-Display");
-const choice3Display = $("#button3-Display");
-const choice4Display = $("#button4-Display");
-let questionIndex = 0;
-let choices;
 
-// function to display the question from my questions array    
-function displayQuestion(){   
-           
-    askQ.innerText = questions[questionIndex].question;
-    choice1Display.innerText = questions[questionIndex].choice[0];
-    choice2Display.innerText = questions[questionIndex].choice[1];
-    choice3Display.innerText = questions[questionIndex].choice[2];
-    choice4Display.innerText = questions[questionIndex].choice[3];
-}  
-    
-//EventListener for the play button to start quiz 
+const mainDiv = document.querySelector("#main");
+const button = document.querySelector("button");
+const hello = document.querySelector("#hello");
+const intro = document.querySelector("#intro");
+const question = document.querySelector("#question");
+const title = document.querySelector("#title");
+const a1 = document.querySelector("#a1");
+const a2 = document.querySelector("#a2");
+const a3 = document.querySelector("#a3");
+const a4 = document.querySelector("#a4");
+let questionIndex = 0;
+
+
+function displayQuestion(){
+
+    title.innerText = questions[questionIndex].question;
+    a1.innerText = questions[questionIndex].choice[0];
+    a2.innerText = questions[questionIndex].choice[1];
+    a3.innerText = questions[questionIndex].choice[2];
+    a4.innerText = questions[questionIndex].choice[3];
+}
+
+
 button.addEventListener("click", function(){
     console.log("button clicked");
 
-    quizDisplay.classList.add("hide");
+    intro.classList.add("hide");
     question.classList.remove("hide")
 
     displayQuestion()
 
 })
 
+
 document.querySelectorAll(".ans").forEach(function(e){
 
     e.addEventListener("click", function(e){
-        //console.log(e.target.innerText);
-        // check my answer
-        let correct = questions[questionIndex].answer
-        let choice = e.target.innerText
+            //console.log(e.target.innerText);
+            // check my answer
+            let correct = questions[questionIndex].answer
+            let choice = e.target.innerText
 
-        if (correct == choice){
-            console.log("correct")
-        }
-        else{
-            console.log("wrong")
-        }
-
-        // load my next question
-            
-        questionIndex++;
-
-        if(questionIndex != questions.length){
-            displayQuestion();
-        }else{
-            console.log("done")
-            // hide questons div
-            // display results div
+            if (correct == choice){
+                console.log("correct")
+            }
+            else{
+                console.log("wrong")
             }
 
-    })
+            // load my next question
+            
+            questionIndex++;
+
+            if(questionIndex != questions.length){
+             displayQuestion();
+            }else{
+                console.log("done")
+                // hide questons div
+                // display results div
+            }
+
+        })
 
 })
-
-// when the timer ends or the questions have all been completed then the game ends and you move to end game screen.
-// ^Event listener for when timer hits 0/ max time hits 0 or all questions are answered
-//  ^the highscore saved locallaly to store in the high scores. JSON.stringify to stringify it for save JSON.parse to save it to the local storage
-
-
-// On the end-game screen you are prompted to enter your initials to save to the score/high-score 
-// On the end-game screen you then can click to play again or to view the high-scores  // maybe this can just presist thoughout like a restart..
-
-
-// if you clicked high-scores you are taken to high-score section
-// from the high-scores you see the stored high scores with initials that were saved, 
-// from the high-scores sections there are two buttons play again or clear the high-scores//

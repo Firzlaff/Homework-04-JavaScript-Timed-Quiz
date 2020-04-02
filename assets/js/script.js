@@ -62,7 +62,8 @@ const a4 = document.querySelector("#a4");
 const endScreen = document.querySelector("#endScreen");
 const highScores = document.querySelector("#highScores");
 let questionIndex = 0;
-
+let score = 0;
+let timer = 60;
 // Function to display the next question
 function displayQuestion(){
 
@@ -79,9 +80,10 @@ button.addEventListener("click", function(){
 
     intro.classList.add("hide");
     question.classList.remove("hide")
-
+// runs the display question to start showing quesitons and answer choices
     displayQuestion()
-
+// starts the timer for the quiz
+    startTimer()
 })
 
 
@@ -89,16 +91,18 @@ document.querySelectorAll(".ans").forEach(function(e){
 
     e.addEventListener("click", function(e){
             //console.log(e.target.innerText);
-            // check the answers
+            // check the answers 
             let correct = questions[questionIndex].answer
             let choice = e.target.innerText
 
             if (correct == choice){
-                console.log("correct")
+                //console.log("correct")
+                score ++;
             }
             else{
                 // this needs to signal wrong and subtract 10 seconds from the time. 
-                console.log("wrong")
+               // console.log("wrong")
+
             }
 
             // load the next question
@@ -110,12 +114,35 @@ document.querySelectorAll(".ans").forEach(function(e){
             }else{
                 // hide questons div
                 question.classList.add("hide");
-                endScreen.classList.remove("hide")
-                
+                endScreen.classList.remove("hide");
+
                 // display results div
             }
 
         })
+
+
+            // timer for quiz
+        function startTimer() {
+          // if the timer is greater than 0 
+            if (timer > 0) {    
+              
+                interval = setInterval(function() {
+                 //minus 1 second off the timer every second
+                    timer--;
+                  
+                  
+                }, 1000);
+            } else {
+                // if timer ends hides questions and pulls endGame screen
+                question.classList.add("hide");
+                endScreen.classList.remove("hide");
+            }
+          }
+          
+         
+          
+          
 
 })
 

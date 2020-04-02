@@ -48,7 +48,7 @@ const questions = [
     }
 ];
 
-
+//HTML Nodes for Target
 const mainDiv = document.querySelector("#main");
 const button = document.querySelector("button");
 const hello = document.querySelector("#hello");
@@ -59,9 +59,11 @@ const a1 = document.querySelector("#a1");
 const a2 = document.querySelector("#a2");
 const a3 = document.querySelector("#a3");
 const a4 = document.querySelector("#a4");
+const endScreen = document.querySelector("#endScreen");
+const highScores = document.querySelector("#highScores");
 let questionIndex = 0;
 
-
+// Function to display the next question
 function displayQuestion(){
 
     title.innerText = questions[questionIndex].question;
@@ -71,9 +73,9 @@ function displayQuestion(){
     a4.innerText = questions[questionIndex].choice[3];
 }
 
-
+// Event Listener for play button to start displaying functions. 
 button.addEventListener("click", function(){
-    console.log("button clicked");
+   // console.log("button clicked");
 
     intro.classList.add("hide");
     question.classList.remove("hide")
@@ -87,7 +89,7 @@ document.querySelectorAll(".ans").forEach(function(e){
 
     e.addEventListener("click", function(e){
             //console.log(e.target.innerText);
-            // check my answer
+            // check the answers
             let correct = questions[questionIndex].answer
             let choice = e.target.innerText
 
@@ -95,21 +97,28 @@ document.querySelectorAll(".ans").forEach(function(e){
                 console.log("correct")
             }
             else{
+                // this needs to signal wrong and subtract 10 seconds from the time. 
                 console.log("wrong")
             }
 
-            // load my next question
+            // load the next question
             
             questionIndex++;
 
             if(questionIndex != questions.length){
              displayQuestion();
             }else{
-                console.log("done")
                 // hide questons div
+                question.classList.add("hide");
+                endScreen.classList.remove("hide")
+                
                 // display results div
             }
 
         })
 
 })
+
+// need to add an event timer for when the button starts a timer will start
+
+// 
